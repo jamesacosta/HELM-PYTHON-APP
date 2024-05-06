@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  repository: jamesacosta/fasapi
+  tag: "04"
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 5050
+  nodePort: 30007

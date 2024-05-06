@@ -1,0 +1,7 @@
+apiVersion: v2
+name: fasapicrud
+description: Helm chart for my Fast API
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
