@@ -1,8 +1,8 @@
 # Starting a FastAPI Project with HELM
 
 This repository contains the HELM configuration files to deploy an application created in python with FastAPI, this is what you have to do to execute the commands and view the application 
-
-## Pasos
+#### REMEMBER IT IS POSSIBLE NOT TO SEE THE APPLICATION BECAUSE IT WORKS WITH A MONGODB ATLAS CLUSTER.
+## STEPS
 
 ### 1. Clone this repository using 
 
@@ -22,25 +22,25 @@ cd /fasapi-helm/templates
 https://helm.sh/docs/intro/install/
 ```
 
-##### En MacOs y Linux:
+#### 1.3 we enter this page and perform the correct installation of MINIKUBE, which is a local kubernetes cluster.
 
 ```Powershell
-source venv/bin/activate
+https://minikube.sigs.k8s.io/docs/start/
 ```
 
-#### 1.3 Instalar FastAPI y Uvicorn:
-
-Con el entorno virtual activo, instala FastAPI y Uvicorn, que es el servidor ASGI recomendado para ejecutar aplicaciones FastAPI.
+#### 1.4 execute the commands to create a namespace and execute the other command to start running the application
 
 ```Powershell
-pip install fastapi uvicorn
+# Create a namespace if necessary
+kubectl create namespace [NAMESPACE_NAME]
+# Deploy the chart
+helm install [DISPLAY_NAME] [CHART_ROUTE] --namespace [NAMESPACE_NAME]
+# You can use this command
+helm install [DEPLOY_NAMESPACE] [CHART_ROUTE] --namespace [NAMESPACE_NAME] -f values.yaml
 ```
 
-#### 1.4 crear un archivo "requirements.txt"
-
-Si ya sabes qué bibliotecas adicionales necesitas, puedes crear un archivo requirements.txt manualmente y listarlas allí. Por ejemplo:
-
-```
-fastapi==0.68.0
-uvicorn==0.15.0
+#### 1.4 To terminate the process use this command  
+```Powershell
+# Delete Deploy
+helm uninstall [DEPLOY_NAME] --namespace [NAMESPACE_NAME]
 ```
