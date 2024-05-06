@@ -34,7 +34,7 @@ https://minikube.sigs.k8s.io/docs/start/
 # Create a namespace if necessary
 kubectl create namespace [NAMESPACE_NAME]
 # Deploy the chart
-helm install [DISPLAY_NAME] [CHART_ROUTE] --namespace [NAMESPACE_NAME]
+helm install [DEPLOY_NAME] [CHART_ROUTE] --namespace [NAMESPACE_NAME]
 # You can use this command
 helm install [DEPLOY_NAMESPACE] [CHART_ROUTE] --namespace [NAMESPACE_NAME] -f values.yaml
 ```
