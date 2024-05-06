@@ -39,7 +39,7 @@ helm install [DEPLOY_NAME] [CHART_ROUTE] --namespace [NAMESPACE_NAME]
 helm install [DEPLOY_NAMESPACE] [CHART_ROUTE] --namespace [NAMESPACE_NAME] -f values.yaml
 ```
 
-#### 1.4 To terminate the process use this command  
+#### 1.5 To terminate the process use this command  
 ```Powershell
 # Delete Deploy
 helm uninstall [DEPLOY_NAME] --namespace [NAMESPACE_NAME]
